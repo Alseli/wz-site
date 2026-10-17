@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===================================================================
+     ★★★ 需要你改的地方：搜 "TODO" 就能全部找到 ★★★
+     下面 3 处 meta 影响搜索引擎和分享卡片，记得改
+     =================================================================== -->
+<title>哈基米 · 我的游戏和动漫</title>
+<meta name="description" content="哈基米的个人主页。一个学生，记录我喜欢的游戏和动漫。">
+<meta name="author" content="哈基米">
+
+<!-- 社交分享卡片（发微信/QQ/推特时会显示） -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="哈基米 · 我的游戏和动漫">
+<meta property="og:description" content="一个学生。记录我喜欢的游戏和动漫。">
+<meta property="og:image" content="assets/avatar.svg">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- 在样式加载前决定明暗主题，避免刷新时闪白 -->
+<script>
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (e) {}
+    var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    var theme = saved || (prefersLight ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+</head>
+
+<body>
+
+<!-- 键盘用户和无障碍读屏用户的跳转链接 -->
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<!-- ================= 顶部导航 ================= -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__brand" href="#top">
+      <span class="nav__dot" aria-hidden="true"></span>
+      <span class="nav__brandText">哈基米</span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="主导航">
+      <a href="#about">关于</a>
+      <a href="#games">游戏</a>
+      <a href="#anime">动漫</a>
+      <a href="#links">收藏</a>
+      <a href="#contact">联系</a>
+    </nav>
+
+    <div class="nav__actions">
+      <button class="icon-btn" id="themeToggle" type="button"
+              aria-label="切换明暗主题" title="切换明暗主题">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.2"/>
+          <path d="M12 2.6v2.4M12 19v2.4M2.6 12h2.4M19 12h2.4M5.4 5.4l1.7 1.7M16.9 16.9l1.7 1.7M18.6 5.4l-1.7 1.7M7.1 16.9l-1.7 1.7"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z"/>
+        </svg>
+      </button>
+      <button class="icon-btn nav__burger" id="burger" type="button"
+              aria-label="打开菜单" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================= 首屏 ================= -->
+  <section class="hero" id="top">
+    <div class="wrap hero__wrap">
+
+      <div class="hero__text">
+        <p class="hero__eyebrow">
+          <span class="pulse" aria-hidden="true"></span>
+          在读学生 · 游戏和动漫爱好者
+        </p>
+
+        <h1 class="hero__title">你好，我是 <em>哈基米</em></h1>
+
+        <p class="hero__lead">
+          一个学生。课余时间基本都在打游戏和看动漫，
+          这个页面用来记录我喜欢的东西。
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#games">
+            看我喜欢的游戏
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="#anime">看我喜欢的动漫</a>
+        </div>
+
+        <!-- 这几个数字会自动跟着 data/content.js 里的条数变，不用手动改 -->
+        <ul class="hero__facts">
+          <li><strong data-count="games">4</strong><span>喜欢的游戏</span></li>
+          <li><strong data-count="anime">4</strong><span>喜欢的动漫</span></li>
+          <li><strong>∞</strong><span>想补的番</span></li>
+        </ul>
+      </div>
+
+      <div class="hero__media">
+        <img class="avatar" src="assets/avatar.svg" alt="哈基米的头像" width="240" height="240">
+        <div class="hero__glow" aria-hidden="true"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= 关于 ================= -->
+  <section class="section reveal" id="about">
+    <div class="wrap">
+      <p class="section__kicker">关于我</p>
+      <h2 class="section__title">我是谁</h2>
+
+      <div class="about">
+        <div class="about__bio">
+          <!-- TODO ★必改★ 这三段是占位内容，换成你自己的话。
+               别写成作文，就当你跟新同学介绍自己那样说 -->
+          <p>
+            我是哈基米，一个学生。这里写你在哪个学校、几年级、
+            学什么方向。一句话让别人知道你现在的状态。
+          </p>
+          <p>
+            这里写你的爱好和日常。比如课间干什么、放学后干什么、
+            周末一般怎么过。写得具体一点，别写「我喜欢学习」这种空话。
+          </p>
+          <p>
+            这里写你最近在忙什么、想做什么。比如正在追哪部番、
+            在练哪个游戏、想学什么新东西。
+          </p>
+
+          <ul class="tags">
+            <!-- TODO ★必改★ 换成你的标签，每个 <li> 一个，加几个都行 -->
+            <li>学生</li>
+            <li>游戏玩家</li>
+            <li>追番中</li>
+            <li>哈基米</li>
+          </ul>
+        </div>
+
+        <aside class="card about__card">
+          <h3 class="card__title">基本信息</h3>
+          <dl class="facts">
+            <!-- TODO ★必改★ 逐条改成你的信息。用不上的直接删掉整行 <div>...</div> -->
+            <div><dt>昵称</dt><dd>哈基米</dd></div>
+            <div><dt>身份</dt><dd>学生</dd></div>
+            <div><dt>年级</dt><dd>（待填写）</dd></div>
+            <div><dt>常玩的</dt><dd>游戏</dd></div>
+            <div><dt>状态</dt><dd class="ok">在线，随时来聊</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 游戏 ================= -->
+  <section class="section reveal" id="games">
+    <div class="wrap">
+      <p class="section__kicker">游戏</p>
+      <h2 class="section__title">我在玩什么</h2>
+
+      <!-- 卡片由 js/render.js 自动生成，内容来自 data/content.js -->
+      <!-- 想加游戏？打开 data/content.js，复制一段 { ... }, 改文字即可 -->
+      <div class="grid grid--2" data-content="games"></div>
+    </div>
+  </section>
+
+  <!-- ================= 动漫 ================= -->
+  <section class="section reveal" id="anime">
+    <div class="wrap">
+      <p class="section__kicker">动漫</p>
+      <h2 class="section__title">我在追什么</h2>
+
+      <!-- 卡片由 js/render.js 自动生成，内容来自 data/content.js -->
+      <!-- 想加动漫？打开 data/content.js，复制一段 { ... }, 改文字即可 -->
+      <div class="grid grid--2" data-content="anime"></div>
+    </div>
+  </section>
+
+  <!-- ================= 收藏 ================= -->
+  <section class="section reveal" id="links">
+    <div class="wrap">
+      <p class="section__kicker">收藏</p>
+      <h2 class="section__title">我的常用链接</h2>
+
+      <div class="grid grid--3">
+        <!-- ================================================================
+             TODO ★必改★ 这三张卡片放你常逛的网站。
+             比如：游戏官网、追番的平台、你常去的论坛、你的社交账号。
+             ================================================================ -->
+        <article class="card">
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>
+          </div>
+          <h3 class="card__title">常逛的网站</h3>                              <!-- ← 改这里 -->
+          <p class="card__desc">说说你为什么常去这里。</p>                       <!-- ← 改这里 -->
+          <ul class="list">
+            <li><a class="link" href="#" target="_blank" rel="noopener">点这里填网址</a></li>  <!-- ← 改这里：href 填网址，文字填网站名 -->
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><rect x="2.5" y="7" width="19" height="10" rx="5"/><path d="M7.5 10.5v3M6 12h3M16 11.5h.01M18 13.5h.01"/></svg>
+          </div>
+          <h3 class="card__title">游戏账号 / 战绩</h3>
+          <p class="card__desc">一起玩可以加我。</p>
+          <ul class="list">
+            <li>昵称：哈基米</li>
+            <li>常在线时间：放学后</li>
+            <li><a class="link" href="#" target="_blank" rel="noopener">我的主页</a></li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg>
+          </div>
+          <h3 class="card__title">想认识新朋友</h3>
+          <p class="card__desc">喜欢同样的游戏或动漫的话，欢迎来聊。</p>
+          <ul class="list">
+            <li><a class="link" href="#contact">看我的联系方式</a></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 联系 ================= -->
+  <section class="section reveal" id="contact">
+    <div class="wrap">
+      <p class="section__kicker">联系</p>
+      <h2 class="section__title">来找我玩</h2>
+
+      <div class="contact">
+        <div class="contact__text">
+          <p>
+            喜欢同样的游戏或者动漫的话，欢迎来聊。
+            一起打游戏、交流追番进度，都行。
+          </p>
+          <!-- TODO ★必改★ 换成你的真实邮箱。不想要邮箱就整段删掉 -->
+          <a class="btn btn--primary btn--lg" href="mailto:hello@example.com">
+            发邮件给我
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg>
+          </a>
+        </div>
+
+        <div class="contact__links">
+          <!-- ================================================================
+               TODO ★必改★ 换成你的账号。
+               不用的平台，把整个 <a ...>...</a> 删掉。
+               加了不想公开真实邮箱，可以把邮箱那条删掉。
+               ================================================================ -->
+          <a class="social" href="mailto:hello@example.com">
+            <span class="social__name">邮箱</span>
+            <span class="social__handle">hello@example.com</span>
+          </a>
+          <a class="social" href="https://space.bilibili.com/" target="_blank" rel="noopener">
+            <span class="social__name">B 站</span>
+            <span class="social__handle">@你的ID</span>
+          </a>
+          <a class="social" href="https://www.douban.com/" target="_blank" rel="noopener">
+            <span class="social__name">豆瓣</span>
+            <span class="social__handle">@你的ID</span>
+          </a>
+          <a class="social" href="https://github.com/" target="_blank" rel="noopener">
+            <span class="social__name">GitHub</span>
+            <span class="social__handle">@你的ID</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= 页脚 ================= -->
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <p>© <span id="year">2025</span> 哈基米</p>
+    <p class="footer__note">一个学生的游戏与动漫收藏页。</p>
+    <a class="link" href="#top">回到顶部<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+  </div>
+</footer>
+
+<!-- data/content.js 放你的游戏和动漫数据，render.js 把它们变成卡片 -->
+<!-- 顺序不能反：先加载数据，再渲染，最后加载编辑器 -->
+<script src="data/content.js"></script>
+<script src="js/render.js"></script>
+<script src="js/main.js"></script>
+<script src="js/editor.js"></script>
+</body>
+</html>
